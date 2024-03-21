@@ -1,0 +1,90 @@
+.input{
+    margin-top: 5%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.DocIMage{
+    margin:0  0 2rem 0;
+    width: 30rem;
+    text-align: center;
+    border : 1.5px solid black;
+    border-radius: 10px;
+}
+
+
+.DocIMage img{
+width:20rem;   
+padding:10px;
+}
+.DocIMage p{
+font-size: 1.1rem;   
+}
+.inputstyle{
+    width:100%;
+    display:grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    gap:50px 65px;
+}
+
+.imagefield{
+
+    margin-top: 1rem;
+    border: 5px solid lightgrey;
+    border-radius: 7px;
+    text-align: center;
+    padding:10px;
+}
+.img-user{
+    width:100%;
+    max-width: 300px;
+    /* height:60%; */
+    margin:auto;
+}
+
+
+
+.button{
+    width: 42.5%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+.buttons{
+    text-align: center;
+    width: 20%;
+    margin: 2rem auto 0 auto;
+    
+}
+.buttons input {
+display:block;
+}
+
+
+
+
+/* .button{
+
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+} */
+
+
+.button Button{
+    margin-top:20px;
+    margin-right:10px;
+}
+
+.submitbutton{
+margin-top:10px !important;
+}
+
+tbody.font-weight-normal tr th {
+    font-weight: 400;
+}

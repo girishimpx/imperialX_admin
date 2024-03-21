@@ -1,0 +1,34 @@
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+    cursor: pointer;
+    margin: 10px -13px;
+}
+
+.inputstyle{
+    display:flex;
+    flex-direction: row ;
+    font-size: 15px;
+    
+}
+.inputstyle .para{
+    width:50%;
+    line-height: 50px;
+}
+.inputstyle .input1 {
+    width: 40%;
+}
+
+.inputstyle1{
+    display:flex;
+    flex-direction: row ;
+    font-size: 15px;
+    
+}
+.inputstyle1 .para1{
+    width:50%;
+    line-height: 50px;
+}
+.inputstyle1 .input1 #standard-select-currency-native{
+    width: 40%;
+    padding-right: 24px;
+    min-width: 174px;
+}

@@ -1,0 +1,139 @@
+.input{
+    margin-top: 5%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.DocIMage{
+    margin:0  0 2rem 0;
+    width: 30rem;
+    text-align: center;
+    border : 1.5px solid black;
+    border-radius: 10px;
+    
+}
+
+
+.DocIMage img{
+width:20rem;   
+padding:10px;
+}
+.DocIMage p{
+font-size: 1.1rem;   
+}
+.inputstyle{
+    width:100%;
+    display:grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    gap:50px 65px;
+}
+
+
+
+
+.button{
+    width: 42.5%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+.buttons{
+    text-align: center;
+    width: 20%;
+    margin: 2rem auto 0 auto;
+    
+}
+.buttons input {
+display:block;
+}
+
+
+
+
+/* .button{
+
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+} */
+
+
+.button Button{
+    margin-top:20px;
+    margin-right:10px;
+}
+
+.submitbutton{
+margin-top:10px !important;
+}
+
+
+
+
+
+.redeem-pop-up-style-cls h5.modal-title {
+    font-size: 27px;
+    font-weight: 700;
+    color: #e06d00;
+}
+
+.redeem-pop-up-style-cls form label.form-label {
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.redeem-pop-up-style-cls form input {
+    margin-bottom: 15px;
+    border-color: #898383;
+}
+
+.redeem-pop-up-style-cls form input::placeholder {
+    color: #000;
+}
+
+.approve-redeem-checbox input {
+    margin-bottom: 0px !important;
+}
+
+.approve-redeem-checbox {
+    display: flex;
+    gap: 5px;
+}
+
+.approve-redeem-checbox label {
+    font-weight: 600;
+}
+
+.error-msg-red {color: #f00; font-weight: 600; text-align: center;}
+
+
+.modal-footer button.btn.btn-danger {
+    background: #f00;
+    color: #fff;
+    font-weight: 600;
+    width: 120px;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.modal-footer button.btn.btn-success {
+    background: green;
+    color: #fff;
+    font-weight: 600;
+    width: 120px;
+}
+
+.approve-redeem-checbox input {
+    width: 18px;
+}
+
+.approve-redeem-checbox {
+    margin-top: 5px;
+}

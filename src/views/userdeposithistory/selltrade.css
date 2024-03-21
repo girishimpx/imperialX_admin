@@ -1,0 +1,36 @@
+.tittle{
+    font-size: 1.5rem;
+    margin-top: -16px;
+}
+
+
+.inputstyle{
+    margin:10PX 0;
+    display: flex;
+    flex-direction:row;
+    gap: 0 34px;
+    margin: 20px 0;
+}
+.inputstyle .input1 #standard-select-currency-native{
+    padding-right: 24px;
+    min-width: 559px;;
+}
+/* td.datacell {
+    background-color: red;
+    color: white;
+} */
+
+.imput1{
+    width:50%;
+}
+#standard-select-currency-native{
+    padding:8px !important;
+}
+.tabelcontent{
+    width:100%;
+    background-color: red;
+    color:white;
+}
+.tabelcontent >p{
+    padding:9px;
+}
