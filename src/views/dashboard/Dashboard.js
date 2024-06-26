@@ -1,6 +1,7 @@
-import React,{useEffect} from 'react'
-import {useNavigate,Navigate}  from 'react-router-dom'
-
+import React, { useEffect, useState } from 'react'
+import { useNavigate, Navigate } from 'react-router-dom'
+import Axios from "axios";
+import consts from "../../constant/constant";
 import {
   CAvatar,
   CButton,
@@ -22,6 +23,8 @@ import {
 import { CChartLine } from '@coreui/react-chartjs'
 import { getStyle, hexToRgba } from '@coreui/utils'
 import CIcon from '@coreui/icons-react'
+import Stack from "@mui/material/Stack";
+
 import {
   cibCcAmex,
   cibCcApplePay,
@@ -45,6 +48,7 @@ import {
   cilUserFemale,
 } from '@coreui/icons'
 
+import Pagination from "@mui/material/Pagination";
 import avatar1 from 'src/assets/images/avatars/1.jpg'
 import avatar2 from 'src/assets/images/avatars/2.jpg'
 import avatar3 from 'src/assets/images/avatars/3.jpg'
@@ -57,7 +61,11 @@ import WidgetsDropdown from '../widgets/WidgetsDropdown'
 
 const Dashboard = () => {
   let navigate = useNavigate()
-  
+  const [user, setUsers] = useState([])
+  const [userCount, setUserCount] = useState(0)
+  const [limit, setLimit] = useState(10);
+  const [page, setPage] = useState(1);
+  const [totalPageCount, settotalPageCount] = useState();
 
 
   const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
@@ -183,10 +191,40 @@ const Dashboard = () => {
     },
   ]
 
+
+  const getUsers = async () => {
+    try {
+      const response = await Axios.post(`${consts.BackendUrl}/auth/getUsers?limit=${limit}&page=${page}`, {}, {
+        headers: {
+          Authorization: localStorage.getItem("imperials"),
+        },
+      })
+      // const utc = response.data.result[0].latestAccess.updatedAt
+      // console.log(new Date(utc).getHours());
+      // console.log(new Date(utc).getMinutes());
+      // console.log(response, 'response');
+      if (response?.data?.success == true) {
+        setUsers(response?.data?.result)
+        setUserCount(response?.data?.userCounts)
+        settotalPageCount(response?.data?.totalPages);
+      }
+      else {
+        setUserCount(0)
+        setUsers([])
+      }
+    } catch (error) {
+      console.log(error, 'err');
+    }
+  }
+  console.log(page, 'page');
+  useEffect(() => {
+    getUsers()
+  }, [page])
+
   return (
     <>
-      <WidgetsDropdown />
-      <CCard className="mb-4">
+      <WidgetsDropdown count={userCount} />
+      {/* <CCard className="mb-4">
         <CCardBody>
           <CRow>
             <CCol sm={5}>
@@ -311,16 +349,16 @@ const Dashboard = () => {
             ))}
           </CRow>
         </CCardFooter>
-      </CCard>
+      </CCard> */}
 
-      <WidgetsBrand withCharts />
+      {/* <WidgetsBrand withCharts /> */}
 
       <CRow>
         <CCol xs>
           <CCard className="mb-4">
-            <CCardHeader>Traffic {' & '} Sales</CCardHeader>
+            {/* <CCardHeader>Traffic {' & '} Sales</CCardHeader> */}
             <CCardBody>
-              <CRow>
+              {/* <CRow>
                 <CCol xs={12} md={6} xl={6}>
                   <CRow>
                     <CCol sm={6}>
@@ -402,38 +440,46 @@ const Dashboard = () => {
                 </CCol>
               </CRow>
 
-              <br />
+              <br /> */}
 
               <CTable align="middle" className="mb-0 border" hover responsive>
                 <CTableHead color="light">
                   <CTableRow>
-                    <CTableHeaderCell className="text-center">
+                    <CTableHeaderCell>S.No</CTableHeaderCell>
+                    <CTableHeaderCell className="unset">
                       <CIcon icon={cilPeople} />
                     </CTableHeaderCell>
                     <CTableHeaderCell>User</CTableHeaderCell>
-                    <CTableHeaderCell className="text-center">Country</CTableHeaderCell>
-                    <CTableHeaderCell>Usage</CTableHeaderCell>
-                    <CTableHeaderCell className="text-center">Payment Method</CTableHeaderCell>
+                    <CTableHeaderCell className="unset">Country</CTableHeaderCell>
+                    {/* <CTableHeaderCell>Usage</CTableHeaderCell>
+                    <CTableHeaderCell className="text-center">Payment Method</CTableHeaderCell> */}
                     <CTableHeaderCell>Activity</CTableHeaderCell>
                   </CTableRow>
                 </CTableHead>
                 <CTableBody>
-                  {tableExample.map((item, index) => (
-                    <CTableRow v-for="item in tableItems" key={index}>
-                      <CTableDataCell className="text-center">
-                        <CAvatar size="md" src={item.avatar.src} status={item.avatar.status} />
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div>{item.user.name}</div>
-                        <div className="small text-medium-emphasis">
-                          <span>{item.user.new ? 'New' : 'Recurring'}</span> | Registered:{' '}
-                          {item.user.registered}
-                        </div>
-                      </CTableDataCell>
-                      <CTableDataCell className="text-center">
-                        <CIcon size="xl" icon={item.country.flag} title={item.country.name} />
-                      </CTableDataCell>
-                      <CTableDataCell>
+                  {
+                    user.length > 0 ?
+                      user.map((item, index) => (
+
+                        <CTableRow v-for="item in tableItems" key={index}>
+                          <CTableDataCell >
+                            {index + 1}
+                          </CTableDataCell>
+                          <CTableDataCell className="text-center">
+                            {/* <CAvatar size="md" src={item.avatar.src} status={item.avatar.status} /> */}
+                          </CTableDataCell>
+                          <CTableDataCell>
+                            <div>{item.name}</div>
+                            <div className="small text-medium-emphasis">
+                              {/* <span>{item.user.new ? 'New' : 'Recurring'}</span> | Registered:{' '} */}
+                              {item.email}
+                            </div>
+                          </CTableDataCell>
+                          <CTableDataCell className="unset">
+                            {/* <CIcon size="xl" icon={item.country.flag} title={item.country.name} /> */}
+                            {item.country.country}
+                          </CTableDataCell>
+                          {/* <CTableDataCell>
                         <div className="clearfix">
                           <div className="float-start">
                             <strong>{item.usage.value}%</strong>
@@ -446,15 +492,39 @@ const Dashboard = () => {
                       </CTableDataCell>
                       <CTableDataCell className="text-center">
                         <CIcon size="xl" icon={item.payment.icon} />
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div className="small text-medium-emphasis">Last login</div>
-                        <strong>{item.activity}</strong>
-                      </CTableDataCell>
-                    </CTableRow>
-                  ))}
+                      </CTableDataCell> */}
+                          <CTableDataCell>
+                            <div className="small text-medium-emphasis">Last login</div>
+                            <strong>{new Date(item.latestAccess.updatedAt).getMinutes()} Minutes ago</strong>
+
+                          </CTableDataCell>
+                        </CTableRow>
+                      ))
+                      :
+                      <p style={{ textAlign: "center", color: "black", fontSize: "18px" }}>
+                        Data Not Found
+                      </p>
+                  }
                 </CTableBody>
               </CTable>
+              <br />
+              {page ? (
+                <div className="paginationdiv">
+                  <Stack spacing={2}>
+                    <Pagination
+                      count={totalPageCount}
+                      page={page}
+                      onChange={(event, value) => {
+                        setPage(value);
+                      }}
+                      variant="outlined"
+                      shape="rounded"
+                    />
+                  </Stack>
+                </div>
+              ) : (
+                <></>
+              )}
             </CCardBody>
           </CCard>
         </CCol>

@@ -1,5 +1,18 @@
-.errmsg{
-    color:red;
-    margin-top:-10px;
+.errmsg {
+    color: red;
+    margin-top: -10px;
     font-size: 14px;
+}
+
+.input-group button.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-edgeEnd {
+    border-radius: 0px 5px 5px 0;
+    border: var(--cui-border-width) solid var(--cui-input-group-addon-border-color, var(--cui-border-color));
+    position: relative;
+    right: 14px;
+    z-index: 9;
+    background: #FFF;
+}
+
+.input-group {
+    width: 100%;
 }

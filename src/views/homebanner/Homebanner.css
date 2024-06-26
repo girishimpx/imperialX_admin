@@ -1,0 +1,145 @@
+.homebanner-image-upload table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.homebanner-image-upload th, .homebanner-image-upload td {
+    border: 1px solid #6462620d;
+    padding: 8px;
+    text-align: center;
+    background-color: #fff;
+    white-space: nowrap;
+}
+
+
+.homebanner-image-upload input[type="file"] {
+    margin: 20px 0;
+}
+
+.homebanner-image-upload img {
+    max-width: 100px;
+    height: auto;
+}
+
+button.del-banner-home-img {
+    border: none;
+    background: #f00;
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.image-name-added-block-outer {
+    background: #00000082;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 9999;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-name-added-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100%; */
+    background: #5f5c5c;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+
+.image-name-added-block input[type="text"] {
+    padding: 10px 20px;
+    width: 220px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: none;
+}
+
+.image-name-added-block input:focus{
+    cursor: pointer;
+}
+
+.image-name-added-block button {
+    background: #00c330;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.homebanner-image-upload table tbody tr:nth-child(odd) td {
+    background: #f9f8f8;
+}
+
+.homebanner-image-upload table tbody tr:nth-child(odd) td {
+    background: #f9f8f8;
+}
+
+.homebanner-image-upload-table table {
+    width: 100%;
+    margin: 0px;
+}
+
+.homebanner-image-upload-table {
+    height: 400px;
+    overflow: auto;
+}
+
+/* width */
+.homebanner-image-upload-table::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+.homebanner-image-upload-table::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+.homebanner-image-upload-table::-webkit-scrollbar-thumb {
+    background: #005a30; 
+  }
+
+.homebanner-image-upload-table table th {
+    position: sticky;
+    top: -1px;
+}
+
+.homebanner-image-upload-button-top button {
+    background: #ccc;
+    border: none;
+    background: #23d3a7;
+    padding: 8px 15px;
+    border-radius: 14px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.homebanner-image-upload-button-top {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.homebanner-image-upload-button-top input {
+    position: absolute;
+    top: -19px;
+    opacity: 0;
+    cursor: pointer;
+    height: 43px;
+}
+
+.homebanner-image-upload-table img {
+    height: 80px;
+    width: auto;
+}

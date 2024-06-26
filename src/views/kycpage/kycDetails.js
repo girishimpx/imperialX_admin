@@ -36,11 +36,12 @@ const KycDetails = () => {
       },
     })
       .then((res) => {
-        toast.success(`${res?.data?.message}`, {
-          
+        if (res?.data?.success) {
+          toast.success(`${res?.data?.message}`, {
+
             duration: 1800,
             position: "top-center",
-  
+
             // Styling
             style: {
               padding: "1rem",
@@ -49,59 +50,91 @@ const KycDetails = () => {
               fontWeight: "bold",
             },
             className: "",
-  
+
             // Custom Icon
             icon: "👏",
-  
+
             // Change colors of success/error/loading icon
             iconTheme: {
               primary: "#000",
               secondary: "#fff",
             },
-  
+
             // Aria
             ariaProps: {
               role: "status",
               "aria-live": "polite",
             },
           });
+          setTimeout(() => {
+            Navigate("/imperialAdmin/kyc");
+          }, 1800);
+        }
+        else {
+          toast.error(`${res?.data?.message}`, {
 
+            duration: 1800,
+            position: "top-center",
 
+            // Styling
+            style: {
+              padding: "1rem",
+              fontSize: "15px",
+              color: "red",
+              fontWeight: "bold",
+            },
+            className: "",
 
-        setTimeout(() => {
-          Navigate("/imperialAdmin/kyc");
-        }, 1800);
+            // Custom Icon
+            icon: "👏",
+
+            // Change colors of success/error/loading icon
+            iconTheme: {
+              primary: "#000",
+              secondary: "#fff",
+            },
+
+            // Aria
+            ariaProps: {
+              role: "status",
+              "aria-live": "polite",
+            },
+          });
+          setTimeout(() => {
+            Navigate("/imperialAdmin/kyc");
+          }, 1800);
+        }
       })
       .catch((err) => {
         toast.error(`${err?.response?.data?.message}`, {
-          
-            duration: 1800,
-            position: "top-center",
-  
-            // Styling
-            style: {
-              padding: "1rem",
-              fontSize: "15px",
-              color: "green",
-              fontWeight: "bold",
-            },
-            className: "",
-  
-            // Custom Icon
-            // icon: "👏",
-  
-            // Change colors of success/error/loading icon
-            iconTheme: {
-              primary: "#000",
-              secondary: "#fff",
-            },
-  
-            // Aria
-            ariaProps: {
-              role: "status",
-              "aria-live": "polite",
-            },
-          });
+
+          duration: 1800,
+          position: "top-center",
+
+          // Styling
+          style: {
+            padding: "1rem",
+            fontSize: "15px",
+            color: "green",
+            fontWeight: "bold",
+          },
+          className: "",
+
+          // Custom Icon
+          // icon: "👏",
+
+          // Change colors of success/error/loading icon
+          iconTheme: {
+            primary: "#000",
+            secondary: "#fff",
+          },
+
+          // Aria
+          ariaProps: {
+            role: "status",
+            "aria-live": "polite",
+          },
+        });
       });
   };
 
@@ -125,131 +158,131 @@ const KycDetails = () => {
         </div>
         <div className="inputstyle kyc-detail-input-fields">
           <div>
-          <label>First Name</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.first_name}
-            disabled={detail?.state?.first_name}
-            variant="outlined"
-          />
+            <label>First Name</label>
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.first_name}
+              disabled={detail?.state?.first_name}
+              variant="outlined"
+            />
           </div>
           <div>
             <label>Last Name</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.last_name}
-            disabled="true"
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.last_name}
+              disabled="true"
+              variant="outlined"
+            />
           </div>
           <div>
             <label>Reason</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.reason}
-            disabled="true"
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.reason}
+              disabled="true"
+              variant="outlined"
+            />
           </div>
           <div>
             <label>Phone</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.phone_no}
-            disabled={detail?.state?.phone_no}
-            label=""
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.phone_no}
+              disabled={detail?.state?.phone_no}
+              label=""
+              variant="outlined"
+            />
           </div>
           <div>
             <label>Gender</label>
             <TextField
-            id="outlined-basic"
-            value={detail?.state?.gender}
-            disabled={detail?.state?.gender}
-            variant="outlined"
-          />
+              id="outlined-basic"
+              value={detail?.state?.gender}
+              disabled={detail?.state?.gender}
+              variant="outlined"
+            />
           </div>
           <div>
             <label>DOB</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.dob}
-            disabled={detail?.state?.dob}
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.dob}
+              disabled={detail?.state?.dob}
+              variant="outlined"
+            />
           </div>
           <div>
             <label>Country</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.country}
-            disabled={detail?.state?.country}
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.country}
+              disabled={detail?.state?.country}
+              variant="outlined"
+            />
           </div>
           <div>
             <label>State</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.state}
-            disabled={detail?.state?.state}
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.state}
+              disabled={detail?.state?.state}
+              variant="outlined"
+            />
           </div>
           <div>
             <label>City</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.city}
-            disabled={detail?.state?.city}
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.city}
+              disabled={detail?.state?.city}
+              variant="outlined"
+            />
           </div>
           <div>
             <label>Zipcode</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.zipcode}
-            disabled={detail?.state?.zipcode}
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.zipcode}
+              disabled={detail?.state?.zipcode}
+              variant="outlined"
+            />
           </div>
           <div>
             <label>Address</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.address}
-            disabled={detail?.state?.address}
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.address}
+              disabled={detail?.state?.address}
+              variant="outlined"
+            />
           </div>
           <div>
             <label>Document Type</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.document_type}
-            disabled={detail?.state?.document_type}
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.document_type}
+              disabled={detail?.state?.document_type}
+              variant="outlined"
+            />
           </div>
           <div>
             <label>Document Number</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.document_num}
-            disabled={detail?.state?.document_num}
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.document_num}
+              disabled={detail?.state?.document_num}
+              variant="outlined"
+            />
           </div>
           <div>
             <label>Telegram Name</label>
-          <TextField
-            id="outlined-basic"
-            value={detail?.state?.telegram}
-            disabled={detail?.state?.telegram}
-            variant="outlined"
-          />
+            <TextField
+              id="outlined-basic"
+              value={detail?.state?.telegram}
+              disabled={detail?.state?.telegram}
+              variant="outlined"
+            />
           </div>
         </div>
       </div>
@@ -284,19 +317,19 @@ const KycDetails = () => {
 
       <div className="button">
 
-      {(detail?.state?.status == "2" || detail?.state?.status == "0")  && (
-        <Button
-          variant="contained"
-          onClick={() => {
-            Action("1");
-          }}
-        >
-          Approve
-        </Button>
+        {(detail?.state?.status == "2" || detail?.state?.status == "0") && (
+          <Button
+            variant="contained"
+            onClick={() => {
+              Action("1");
+            }}
+          >
+            Approve
+          </Button>
 
-      )}
+        )}
 
-        
+
 
         {detail?.state?.status == "0" && (
           <Button

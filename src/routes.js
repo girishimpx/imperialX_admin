@@ -2,11 +2,10 @@ import React from "react";
 
 const Dashboard = React.lazy(() => import("./views/dashboard/Dashboard"));
 const Colors = React.lazy(() => import("./views/theme/colors/Colors"));
-const Typography = React.lazy(() =>
-  import("./views/theme/typography/Typography")
-);
+const Typography = React.lazy(() =>import("./views/theme/typography/Typography"));
 const Kyc = React.lazy(() => import("./views/kycpage/kyc"));
 const Referal = React.lazy(() => import("./views/referal/Referal"));
+const Homebanner = React.lazy(() => import("./views/homebanner/Homebanner"));
 const KycDetails = React.lazy(() => import("./views/kycpage/kycDetails"));
 const UserList = React.lazy(() => import("./views/userList/userlist"));
 const UserDetails = React.lazy(() => import("./views/userList/userDetails"));
@@ -149,6 +148,7 @@ const routes = [
   },
   { path: "/imperialAdmin/Kyc", name: "Kyc", element: Kyc },
   { path: "/imperialAdmin/referal", name: "Referal", element: Referal },
+  { path: "/imperialAdmin/homebanner", name: "Homebanner", element: Homebanner },
   {
     path: "/imperialAdmin/KycDetails",
     name: "KycDetails",

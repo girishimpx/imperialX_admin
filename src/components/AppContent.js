@@ -30,9 +30,9 @@ const AppContent = () => {
           <Route
             path="/"
             element={
-              <Private>
-                <Navigate to="dashboard" replace />
-              </Private>
+              // <Private>
+              <Navigate to="imperialAdmin/login" replace />
+              // </Private>
             }
           />
         </Routes>

@@ -1,40 +1,42 @@
-.input{
+.input {
     margin-top: 5%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.DocIMage{
-    margin:0  0 2rem 0;
+.DocIMage {
+    margin: 0 0 2rem 0;
     width: 30rem;
     text-align: center;
-    border : 1.5px solid black;
+    border: 1.5px solid black;
     border-radius: 10px;
-    
+
 }
 
 
-.DocIMage img{
-width:20rem;   
-padding:10px;
+.DocIMage img {
+    width: 20rem;
+    padding: 10px;
 }
-.DocIMage p{
-font-size: 1.1rem;   
+
+.DocIMage p {
+    font-size: 1.1rem;
 }
-.inputstyle{
-    width:100%;
-    display:grid;
+
+.inputstyle {
+    width: 100%;
+    display: grid;
     justify-content: center;
     grid-template-columns: auto auto;
-    gap:50px 65px;
+    gap: 50px 65px;
 }
 
 
 
 
-.button{
+.button {
     width: 42.5%;
     margin: auto;
     display: flex;
@@ -42,14 +44,16 @@ font-size: 1.1rem;
     margin-top: 1rem;
     margin-bottom: 3rem;
 }
-.buttons{
+
+.buttons {
     text-align: center;
     width: 20%;
     margin: 2rem auto 0 auto;
-    
+
 }
+
 .buttons input {
-display:block;
+    display: block;
 }
 
 
@@ -63,13 +67,13 @@ display:block;
 } */
 
 
-.button Button{
-    margin-top:20px;
-    margin-right:10px;
+.button Button {
+    margin-top: 20px;
+    margin-right: 10px;
 }
 
-.submitbutton{
-margin-top:10px !important;
+.submitbutton {
+    margin-top: 10px !important;
 }
 
 
@@ -109,7 +113,11 @@ margin-top:10px !important;
     font-weight: 600;
 }
 
-.error-msg-red {color: #f00; font-weight: 600; text-align: center;}
+.error-msg-red {
+    color: #f00;
+    font-weight: 600;
+    text-align: center;
+}
 
 
 .modal-footer button.btn.btn-danger {
@@ -136,4 +144,75 @@ margin-top:10px !important;
 
 .approve-redeem-checbox {
     margin-top: 5px;
+}
+
+.Add-Referel-Price-outer-btn {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.Add-Referel-Price-outer-btn button {
+    border: none;
+    background: #04b388;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.Add-Referel-Price-outer {
+    position: fixed;
+    background: #3d3d3d87;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Add-Referel-Price {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    /* height: 100%; */
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Add-Referel-Price input {
+    margin-bottom: 20px;
+}
+
+.Add-Referel-Price input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid;
+    margin-top: 5px;
+}
+
+.Add-Referel-Price input:focus {
+    outline: none;
+}
+
+.Add-Referel-Price label {
+    font-weight: 600;
+    color: #000;
+}
+
+.Add-Referel-Price button.add-referal-btn {
+    background: #289c00;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.cancel-icon {
+    margin-left: auto
 }

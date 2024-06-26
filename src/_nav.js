@@ -61,6 +61,12 @@ const _nav = [
     icon: <CIcon icon={cilSitemap} size="lg" customClassName="nav-icon" />,
   },
   {
+    component: CNavItem,
+    name: 'Home Banner',
+    to: '/imperialAdmin/homebanner',
+    icon: <CIcon icon={cilSitemap} size="lg" customClassName="nav-icon" />,
+  },
+  {
     component: CNavGroup,
     name: 'Coin settings',
     to: '/imperialAdmin/coinseetings',

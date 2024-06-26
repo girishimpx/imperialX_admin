@@ -116,15 +116,15 @@ const selltrade = () => {
     <>
       <h4 className="tittle">USER DEPOSIT HISTORY</h4>
 
-      <div style={{ textAlign: "start"}}>
+      <div style={{ textAlign: "start" }}>
         <div>
           {assetlist && (
             <TextField
-              style={{ width: "10%", textAlign: "start",padding:"8px" }}
+              style={{ width: "10%", textAlign: "start", padding: "8px" }}
               id="standard-select-currency-native"
               select
               defaultValue="XRP-USDT"
-              
+
               onChange={(e) => {
                 setOrder(e.target.value);
               }}
@@ -134,7 +134,7 @@ const selltrade = () => {
               variant="outlined"
             >
               <option
-                style={{ textAlign: "center"}}
+                style={{ textAlign: "center" }}
                 value={"All"}
               >
                 All
@@ -193,12 +193,12 @@ const selltrade = () => {
                           item.status == "init"
                             ? "orange"
                             : item.status == "filled"
-                            ? "#1ba102"
-                            : item.status == "partially_filled"
-                            ? "blue"
-                            : item.status == "canceled"
-                            ? "red"
-                            : "",
+                              ? "#1ba102"
+                              : item.status == "partially_filled"
+                                ? "blue"
+                                : item.status == "canceled"
+                                  ? "red"
+                                  : "",
                       }}
                     >
                       {item.status.charAt(0).toUpperCase() +
